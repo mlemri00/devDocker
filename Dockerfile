@@ -7,6 +7,7 @@ COPY ./volumes/llibres/ /var/www/llibres
 COPY ./volumes/llista-camisetes/ /var/www/camisetes
 COPY ./volumes/conf/llibres.conf /etc/apache2/sites-available/
 COPY ./volumes/conf/camisetes.conf /etc/apache2/sites-available/
+RUN a2enmod ssl
 RUN a2ensite llibres.conf && a2ensite camisetes.conf
 
 
